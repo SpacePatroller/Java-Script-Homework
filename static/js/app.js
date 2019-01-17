@@ -23,6 +23,14 @@ filterBtn.on("click", function () {
     var dataFiltered = tableData.filter(date => date.datetime === String(dateEntered));   
     console.log(dataFiltered);
   
+    if (dataFiltered.length === 0) {
+        console.log("Try Again");   
+        d3.select(".navbar-header>a").attr("href").text("Try Again. Data Date Range: 1/1/2010 - 1/13/2010") ;
+        
+    }
+    
+    var test = d3.select(".navbar-header>a").attr("href");
+    console.log(test);
     
     // Reference to the table body
     var tbody = d3.select("tbody");
@@ -38,6 +46,19 @@ filterBtn.on("click", function () {
     var cell = tbody.append("td");
     // for each value create a td element within the row
     cell.text(value);
+        
+       // check to see if object returnd is blank, if so create pop up?
+        
+   
+        
+    d3.selectAll("td").style("color", function() {
+    return "hsl(" + Math.random() * 360 + ",75%,50%)";
+        
+        
+    
+                
+                    });
+               
           });
      }); 
 });
