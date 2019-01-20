@@ -12,7 +12,7 @@ filterBtn.on("click", function () {
     // if there is anydata when the button is clicked it will be removed. 
     var tableRows = d3.selectAll("td").remove();
         
-    // Prevent the page from refreshing ( TA Grading this -- whats the deal with this? Remember using it in the activities but forget the issues that could occur? It never really made a diffrence in my code.)
+    // Prevent the page from refreshing ( TA Grading this -- whats the deal with this? Remember using it in the activities but forget the issues that could occur? It never really made a diffrence in my code (I think).)
     d3.event.preventDefault();
     
     // Select the input element and get the get the value property of the input element
@@ -25,7 +25,7 @@ filterBtn.on("click", function () {
   
     if (dataFiltered.length === 0) {
         console.log("Try Again");   
-        d3.select(".navbar-header>a").attr("href").text("Try Again. Data Date Range: 1/1/2010 - 1/13/2010") ;
+        window.alert("Try Again. Available Date Range: 1/1/2010 - 1/13/2010" + "    Date format must be dd/mm/yyyy") ;
         
     }
     
